@@ -5,7 +5,7 @@ body {
   background: #121212;
 }
 
-.auth__container{
+.auth__container {
   height: 100vh;
 }
 
@@ -43,8 +43,8 @@ body {
     flex-direction: column;
     margin: 2rem 0;
     input {
-      margin: 1rem 0;
-      padding: 1.3rem 1rem;
+      margin: 0.5rem 0;
+      padding: 1rem 0.8rem;
       font-family: 'Finlandica';
       border: none;
       color: white;
@@ -56,12 +56,16 @@ body {
 
     button {
       background: #ffda34;
-      padding: 1.3rem 1rem;
+      padding: 1rem 0.8rem;
       font-family: 'Finlandica';
       font-weight: bold;
       font-size: 1.1rem;
-      margin: 1rem 0;
+      margin: 0.5rem 0;
       cursor: pointer;
+    }
+    hr {
+      background: white;
+      width: 100%;
     }
   }
   a {
