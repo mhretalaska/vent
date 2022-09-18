@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app";
 import {
   GoogleAuthProvider,
   getAuth,
@@ -7,7 +7,7 @@ import {
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   signOut,
-} from 'firebase/auth';
+} from "firebase/auth";
 import {
   getFirestore,
   query,
@@ -15,16 +15,16 @@ import {
   collection,
   where,
   addDoc,
-} from 'firebase/firestore';
+} from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBCUOYfV6aoVxz0Hq0jGpPIp8FyH0tjbcU',
-  authDomain: 'alyeska-venting-sapce.firebaseapp.com',
-  projectId: 'alyeska-venting-sapce',
-  storageBucket: 'alyeska-venting-sapce.appspot.com',
-  messagingSenderId: '818718221462',
-  appId: '1:818718221462:web:d50561a0c1bf24a9f28eb7',
-  measurementId: 'G-BM0REL8DGL',
+  apiKey: "AIzaSyBCUOYfV6aoVxz0Hq0jGpPIp8FyH0tjbcU",
+  authDomain: "alyeska-venting-sapce.firebaseapp.com",
+  projectId: "alyeska-venting-sapce",
+  storageBucket: "alyeska-venting-sapce.appspot.com",
+  messagingSenderId: "818718221462",
+  appId: "1:818718221462:web:d50561a0c1bf24a9f28eb7",
+  measurementId: "G-BM0REL8DGL",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -36,13 +36,13 @@ const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, googleProvider);
     const user = res.user;
-    const q = query(collection(db, 'users'), where('uid', '==', user.uid));
+    const q = query(collection(db, "users"), where("uid", "==", user.uid));
     const docs = await getDocs(q);
     if (docs.docs.length === 0) {
-      await addDoc(collection(db, 'users'), {
+      await addDoc(collection(db, "users"), {
         uid: user.uid,
         name: user.displayName,
-        authProvider: 'google',
+        authProvider: "google",
         email: user.email,
       });
     }
@@ -65,10 +65,10 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
-    await addDoc(collection(db, 'user'), {
+    await addDoc(collection(db, "user"), {
       uid: user.uid,
-      name,
-      authProvider: 'local',
+      name: user.displayName,
+      authProvider: "local",
       email,
     });
   } catch (error) {

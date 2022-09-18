@@ -1,20 +1,16 @@
-import React from 'react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
+import React from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 export default function Particle() {
   const particlesInit = async (main) => {
     console.log(main);
-
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(main);
   };
 
   return (
     <div>
       <Particles
-        id='tsparticles'
+        id="tsparticles"
         init={particlesInit}
         options={{
           fullScreen: {
@@ -30,10 +26,10 @@ export default function Particle() {
               },
             },
             color: {
-              value: '#fff',
+              value: "#ffda34",
             },
             shape: {
-              type: 'star',
+              type: "star",
               options: {
                 sides: 5,
               },
@@ -61,7 +57,7 @@ export default function Particle() {
             rotate: {
               value: 0,
               random: true,
-              direction: 'clockwise',
+              direction: "clockwise",
               animation: {
                 enable: true,
                 speed: 5,
@@ -69,19 +65,19 @@ export default function Particle() {
               },
             },
             line_linked: {
-              enable: true,
+              enable: false,
               distance: 600,
-              color: '#ffffff',
+              color: "#ffda34",
               opacity: 0.4,
-              width: 2,
+              width: 1,
             },
             move: {
               enable: true,
               speed: 2,
-              direction: 'none',
+              direction: "none",
               random: false,
               straight: false,
-              out_mode: 'out',
+              out_mode: "out",
               attract: {
                 enable: false,
                 rotateX: 600,
@@ -93,11 +89,11 @@ export default function Particle() {
             events: {
               onhover: {
                 enable: true,
-                mode: ['grab'],
+                mode: ["grab"],
               },
               onclick: {
                 enable: false,
-                mode: 'bubble',
+                mode: "bubble",
               },
               resize: true,
             },
@@ -128,11 +124,11 @@ export default function Particle() {
           },
           retina_detect: true,
           background: {
-            color: '#111',
-            image: '',
-            position: '50% 50%',
-            repeat: 'no-repeat',
-            size: 'cover',
+            color: "#111",
+            image: "",
+            position: "50% 50%",
+            repeat: "no-repeat",
+            size: "cover",
           },
         }}
       />
