@@ -8,6 +8,10 @@ function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const navigate = useNavigate();
+
+  /**
+   * It fetches the user's name from the database and sets it to the state.
+   */
   const fetchUserName = async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
@@ -19,11 +23,15 @@ function Dashboard() {
       alert("An error occured while fetching user data");
     }
   };
+
+  /* Checking if the user is logged in or not. If the user is not logged in, it will redirect the user
+  to the login page. */
   useEffect(() => {
     if (loading) return;
     if (!user) return navigate("/");
     fetchUserName();
   }, [user, loading]);
+
   return (
     <div className="dashboard">
       <div className="dashboard__container">

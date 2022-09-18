@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home";
 import Login from "./pages/auth/Login";
+import Reset from "./pages/auth/Reset";
 import Register from "./pages/auth/Register";
 import reportWebVitals from "./reportWebVitals";
 
@@ -15,6 +16,7 @@ root.render(
         <Route path="/" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/home" element={<Home />}></Route>
+        <Route path="/reset" element={<Reset />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
