@@ -63,7 +63,10 @@ export default function Login() {
               </div>
             </div>
           </div>
-          <Link to="/register">Don't have an account yet?</Link>
+          <div className="links">
+            <Link to="/register">Don't have an account yet?</Link>
+            <Link to="/reset">Forgot your password?</Link>
+          </div>
         </div>
         <div className="right">
           <img src={img} alt="" />

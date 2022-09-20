@@ -22,6 +22,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
   .left {
     width: 400px;
     margin: 0 8rem;
@@ -119,5 +120,26 @@ body {
   a {
     color: #6c6c6c;
     text-decoration: none;
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (min-width: 412px) and (max-width: 768px) {
+  .login__container {
+    p {
+      font-size: 1.1rem;
+    }
+    margin: 0;
+    .left {
+      width: 500px;
+    }
+    .right {
+      display: none;
+    }
   }
 }
